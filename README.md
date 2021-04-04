@@ -1,4 +1,3 @@
-# web-hammer
-# Python3 Hammer Dos Script
-# only for legal purpose
-# github.com/cybsam
+1. Only For Leagal Purpose!
+2. How to use Hammer [`Watch it`](http://www.youtube.com/watch?v=HVbRUhX2EPo) 
+3. Fork it...
